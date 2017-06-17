@@ -7,7 +7,6 @@ def parseXML(fileName, filePath, outputDir):
     fo = open(outputFile, "wb")
 
     with file(filePath) as f:
-        # docItems = ET.fromstringlist(["<root>", f.read(), "</root>"])
         xmlstring = "<root>" + f.read() + "</root>"
         parser = etree.XMLParser(recover=True, encoding='iso-8859-1')
         xmlItems = etree.fromstring(xmlstring, parser=parser)
